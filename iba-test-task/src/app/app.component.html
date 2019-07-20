@@ -1,6 +1,26 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
-  <h1>Welcome to {{ title }}!</h1>
+  <app-app-main-menu (click)="search()"></app-app-main-menu>
 
   <router-outlet></router-outlet>
+  <button (click)="calculate()" class="btn btn-primary">Calculate</button>
+  <p *ngIf="a">The average age of employees on {{ date }} is {{ b }}</p>
+  <table class="employee-table">
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Position</th>
+    </tr>
+    <tr
+      *ngFor="let item of response; let i = index"
+      class="employee-row"
+      [class.text-danger]="condition(item.age)"
+    >
+      <td (click)="getFullInformation(response[i])" [class.active]="true">
+        {{ item.name }}
+      </td>
+      <td>{{ item.age }}</td>
+      <td>{{ item.position }}</td>
+    </tr>
+  </table>
 </div>
