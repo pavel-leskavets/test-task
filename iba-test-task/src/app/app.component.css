@@ -1,5 +1,9 @@
+.main-container {
+  display: flex;
+  justify-content: flex-start;
+}
 .employee-table {
-  margin: 0 auto;
+  margin-left: 30px;
   padding: 20px;
   width: 40%;
 }
@@ -11,4 +15,7 @@
 }
 .active {
   cursor: pointer;
+}
+.full-description {
+  width: 300px;
 }

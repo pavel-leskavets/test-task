@@ -10,9 +10,14 @@ import { DatePipe } from "@angular/common";
 export class AppComponent {
   response: any;
   a: boolean = false;
+  close: boolean = false;
   b: number = 0;
   datePipe: any = new DatePipe("en-US");
   date: any = this.datePipe.transform(new Date(), "dd.MM.yyyy");
+  name: string = "";
+  age: string = "";
+  position: string = "";
+  description: string = "";
 
   constructor(private http: HttpClient) {}
   search() {
@@ -34,6 +39,13 @@ export class AppComponent {
     this.b = averageAge / this.response.length;
   }
   getFullInformation(response: any) {
-    console.log(response.name, response.age, response.position, response.desc);
+    this.close = true;
+    this.name = response.name;
+    this.age = response.age;
+    this.position = response.position;
+    this.description = response.desc;
+  }
+  hideDescription() {
+    this.close = !this.close;
   }
 }

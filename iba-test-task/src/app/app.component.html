@@ -5,22 +5,32 @@
   <router-outlet></router-outlet>
   <button (click)="calculate()" class="btn btn-primary">Calculate</button>
   <p *ngIf="a">The average age of employees on {{ date }} is {{ b }}</p>
-  <table class="employee-table">
-    <tr>
-      <th>Name</th>
-      <th>Age</th>
-      <th>Position</th>
-    </tr>
-    <tr
-      *ngFor="let item of response; let i = index"
-      class="employee-row"
-      [class.text-danger]="condition(item.age)"
-    >
-      <td (click)="getFullInformation(response[i])" [class.active]="true">
-        {{ item.name }}
-      </td>
-      <td>{{ item.age }}</td>
-      <td>{{ item.position }}</td>
-    </tr>
-  </table>
+  <div class="main-container">
+    <table class="employee-table">
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Position</th>
+      </tr>
+      <tr
+        *ngFor="let item of response; let i = index"
+        class="employee-row active"
+        [class.text-danger]="condition(item.age)"
+      >
+        <td (click)="getFullInformation(response[i])">
+          {{ item.name }}
+        </td>
+        <td>{{ item.age }}</td>
+        <td>{{ item.position }}</td>
+      </tr>
+    </table>
+
+    <div class="full-description" *ngIf="close">
+      <p>{{ name }}</p>
+      <p>{{ age }}</p>
+      <p>{{ position }}</p>
+      <p>{{ description }}</p>
+      <button class="btn btn-primary" (click)="hideDescription()">Close</button>
+    </div>
+  </div>
 </div>
