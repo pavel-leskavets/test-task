@@ -1,0 +1,14 @@
+.employee-table {
+  margin-left: 30px;
+  padding: 20px;
+  width: 40%;
+}
+.employee-row {
+  border-top: 2px solid lightgray;
+}
+.employee-row > td {
+  padding: 10px 0;
+}
+.active {
+  cursor: pointer;
+}

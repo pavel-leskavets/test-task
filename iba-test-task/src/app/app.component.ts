@@ -20,15 +20,7 @@ export class AppComponent {
   description: string = "";
 
   constructor(private http: HttpClient) {}
-  search() {
-    this.http.get("https://api.myjson.com/bins/n2lex").subscribe(response => {
-      this.response = response;
-      console.log(this.response);
-    });
-  }
-  condition(age: any) {
-    return age > 30;
-  }
+
   calculate() {
     this.a = !this.a;
 

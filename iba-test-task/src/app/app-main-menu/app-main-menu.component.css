@@ -1,3 +1,10 @@
-.main-menu {
+.main-menu-component {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 400px;
+}
+.main-menu-title {
   font-size: 30px;
 }

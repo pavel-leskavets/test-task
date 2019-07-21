@@ -1,0 +1,13 @@
+<div class="navigation-menu-button">
+  <a routerLink="" class="btn btn-primary">
+    Return to main menu
+  </a>
+  <button class="btn btn-primary" (click)="calculateAverageAge()">
+    Calculate
+  </button>
+  <div class="average-age-container">
+    <p *ngIf="showAverageAge">
+      The average age of employees on {{ date }} is {{ b }}
+    </p>
+  </div>
+</div>
