@@ -1,7 +1,22 @@
 <div class="navigation-menu">
   <div class="navigation-menu-buttons">
-    <app-app-navigation-menu></app-app-navigation-menu>
+    <app-app-navigation-menu [response]="response"></app-app-navigation-menu>
   </div>
-  <app-app-table></app-app-table>
-  <app-app-full-description *ngIf="false"></app-app-full-description>
+  <div class="main-info-component">
+    <app-app-table
+      [response]="response"
+      (showFullDescription)="showFullDescription($event)"
+      (fullDescriptionInfo)="fullDescriptionInfo($event)"
+    ></app-app-table>
+    <app-app-details
+      *ngIf="buttonPressed"
+      [response]="response"
+      [name]="name"
+      [age]="age"
+      [position]="position"
+      [description]="description"
+      [arrayToFullDescription]="arrayToFullDescription"
+      (showFullDescription)="showFullDescription($event)"
+    ></app-app-details>
+  </div>
 </div>

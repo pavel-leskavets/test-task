@@ -1,5 +1,4 @@
-import { Component, OnInit } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
+import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
 
 @Component({
   selector: "app-app-table",
@@ -7,15 +6,20 @@ import { HttpClient } from "@angular/common/http";
   styleUrls: ["./app-table.component.css"]
 })
 export class AppTableComponent implements OnInit {
-  response: any;
-  constructor(private http: HttpClient) {}
+  @Input() response: any;
+  @Output() showFullDescription = new EventEmitter<boolean>();
+  @Output() fullDescriptionInfo = new EventEmitter<any>();
 
-  async ngOnInit() {
-    this.http.get("https://api.myjson.com/bins/n2lex").subscribe(response => {
-      this.response = response;
-    });
-  }
-  condition(age: any) {
+  constructor() {}
+  ngOnInit() {}
+
+  checkAge(age: any) {
     return age > 30;
+  }
+  setFullInformation() {
+    this.showFullDescription.emit(true);
+  }
+  getFullInformation(item: any) {
+    this.fullDescriptionInfo.emit(item);
   }
 }

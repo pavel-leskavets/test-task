@@ -8,7 +8,7 @@ import { AppEmployeeComponent } from "./app-employee/app-employee.component";
 import { NewServiceService } from "./new-service.service";
 import { HttpClientModule } from "@angular/common/http";
 import { AppTableComponent } from "./app-table/app-table.component";
-import { AppFullDescriptionComponent } from "./app-full-description/app-full-description.component";
+import { AppDetailsComponent } from "./app-details/app-details.component";
 import { AppNavigationMenuComponent } from "./app-navigation-menu/app-navigation-menu.component";
 
 const appRoutes: Routes = [
@@ -21,7 +21,7 @@ const appRoutes: Routes = [
     AppMainMenuComponent,
     AppEmployeeComponent,
     AppTableComponent,
-    AppFullDescriptionComponent,
+    AppDetailsComponent,
     AppNavigationMenuComponent
   ],
   imports: [
