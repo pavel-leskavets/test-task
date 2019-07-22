@@ -6,7 +6,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
   styleUrls: ["./app-details.component.css"]
 })
 export class AppDetailsComponent implements OnInit {
-  @Input() arrayToFullDescription: any = [];
+  @Input() allDetailsArray: any = [];
   @Input() name: string;
   @Input() age: number;
   @Input() position: string;
@@ -17,7 +17,7 @@ export class AppDetailsComponent implements OnInit {
 
   ngOnInit() {}
 
-  setFullInformation() {
+  setVisibilityFullInformation() {
     this.showFullDescription.emit(false);
   }
 }

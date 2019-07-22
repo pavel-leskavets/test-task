@@ -8,8 +8,8 @@ import { HttpClient } from "@angular/common/http";
 })
 export class AppEmployeeComponent implements OnInit {
   response: any;
-  buttonPressed: boolean = false;
-  arrayToFullDescription: any = [];
+  showDetails: boolean = false;
+  allDetailsArray: any = [];
   name: string = "";
   age: number = 0;
   position: string = "";
@@ -21,18 +21,27 @@ export class AppEmployeeComponent implements OnInit {
     this.http.get("https://api.myjson.com/bins/n2lex").subscribe(response => {
       this.response = response;
     });
+    this.http
+      .get(
+        "https://jsonstorage.net/api/items/0036043f-9245-42dd-85fb-65b848faf39b"
+      )
+      .subscribe(response => {
+        this.response = response;
+      });
   }
   showFullDescription(value: boolean) {
-    this.buttonPressed = value;
+    this.showDetails = value;
   }
-  fullDescriptionInfo(resp: any) {
-    this.arrayToFullDescription.length = 0;
+  setfullDescriptionInfo(resp: any) {
+    this.allDetailsArray.length = 0;
     for (let key in resp) {
-      this.arrayToFullDescription.push(resp[key]);
+      this.allDetailsArray.push(resp[key]);
     }
-    this.name = this.arrayToFullDescription[0];
-    this.age = this.arrayToFullDescription[1];
-    this.position = this.arrayToFullDescription[2];
-    this.description = this.arrayToFullDescription[3];
+    [
+      this.name,
+      this.age,
+      this.position,
+      this.description
+    ] = this.allDetailsArray;
   }
 }

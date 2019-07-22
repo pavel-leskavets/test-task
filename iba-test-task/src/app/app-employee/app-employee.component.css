@@ -1,14 +1,16 @@
 .navigation-menu {
+  display: flex;
+  flex-direction: column;
   margin: 30px;
-
+  width: 600px;
   height: 600px;
 }
 .navigation-menu-buttons {
   margin: 0 0 20px 30px;
 }
 .main-info-component {
-  width: 70%;
+  width: 80%;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
 }

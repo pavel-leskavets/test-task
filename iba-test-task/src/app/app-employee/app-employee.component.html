@@ -6,16 +6,16 @@
     <app-app-table
       [response]="response"
       (showFullDescription)="showFullDescription($event)"
-      (fullDescriptionInfo)="fullDescriptionInfo($event)"
+      (setfullDescriptionInfo)="setfullDescriptionInfo($event)"
     ></app-app-table>
     <app-app-details
-      *ngIf="buttonPressed"
+      *ngIf="showDetails"
       [response]="response"
       [name]="name"
       [age]="age"
       [position]="position"
       [description]="description"
-      [arrayToFullDescription]="arrayToFullDescription"
+      [allDetailsArray]="allDetailsArray"
       (showFullDescription)="showFullDescription($event)"
     ></app-app-details>
   </div>

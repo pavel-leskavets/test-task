@@ -8,7 +8,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
 export class AppTableComponent implements OnInit {
   @Input() response: any;
   @Output() showFullDescription = new EventEmitter<boolean>();
-  @Output() fullDescriptionInfo = new EventEmitter<any>();
+  @Output() setfullDescriptionInfo = new EventEmitter<any>();
 
   constructor() {}
   ngOnInit() {}
@@ -20,6 +20,6 @@ export class AppTableComponent implements OnInit {
     this.showFullDescription.emit(true);
   }
   getFullInformation(item: any) {
-    this.fullDescriptionInfo.emit(item);
+    this.setfullDescriptionInfo.emit(item);
   }
 }

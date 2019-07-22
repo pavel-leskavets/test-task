@@ -6,10 +6,7 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./app-main-menu.component.css"]
 })
 export class AppMainMenuComponent implements OnInit {
-  buttonPressed: boolean = true;
   constructor() {}
-  onClick() {
-    this.buttonPressed = !this.buttonPressed;
-  }
+
   ngOnInit() {}
 }
