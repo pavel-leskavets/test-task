@@ -22,4 +22,11 @@ export class AppTableComponent implements OnInit {
   getFullInformation(item: any) {
     this.setfullDescriptionInfo.emit(item);
   }
+  setBackgroundColorChoosedRow(event: any) {
+    let rows = document.querySelectorAll(".employee-row");
+    rows.forEach(item => {
+      item.classList.remove("bg-warning");
+    });
+    event.target.parentElement.classList.add("bg-warning");
+  }
 }

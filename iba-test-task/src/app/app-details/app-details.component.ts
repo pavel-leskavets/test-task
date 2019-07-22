@@ -20,4 +20,10 @@ export class AppDetailsComponent implements OnInit {
   setVisibilityFullInformation() {
     this.showFullDescription.emit(false);
   }
+  removeActiveRow() {
+    let rows = document.querySelectorAll(".employee-row");
+    rows.forEach(item => {
+      item.classList.remove("bg-warning");
+    });
+  }
 }

@@ -5,7 +5,11 @@
     <li>{{ position }}</li>
     <li>{{ description }}</li>
   </ul>
-  <button class="btn btn-primary" (click)="setVisibilityFullInformation()">
+  <button
+    class="btn btn-primary"
+    (click)="setVisibilityFullInformation()"
+    (click)="removeActiveRow()"
+  >
     Close
   </button>
 </div>

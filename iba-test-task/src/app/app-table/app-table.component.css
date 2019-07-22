@@ -13,3 +13,6 @@
 .active {
   cursor: pointer;
 }
+.choosed-row {
+  background-color: yellow;
+}
